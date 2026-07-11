@@ -1,0 +1,1213 @@
+/********** Template CSS **********/
+:root {
+    --bs-tertiary: #797E88;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.back-to-top {
+    position: fixed !important;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 9999;
+    overflow: visible !important;
+    isolation: auto;
+    will-change: auto;
+    opacity: 1;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+.fw-normal {
+    font-weight: 400 !important;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transform: translateZ(0);
+    transition:
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        letter-spacing 0.35s ease,
+        filter 0.35s ease,
+        background-color 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease;
+    will-change: transform;
+}
+
+/* Aurora shine sweep — skips buttons that already use ::before */
+.btn:not(.btn-report-live):not(.btn-donate-nav):not(.btn-play):not(.btn-link)::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -140%;
+    width: 70%;
+    height: 140%;
+    background: linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.15) 35%,
+        rgba(255, 255, 255, 0.65) 50%,
+        rgba(255, 255, 255, 0.15) 65%,
+        transparent 100%
+    );
+    transform: skewX(-24deg);
+    transition: left 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.btn:not(.btn-report-live):not(.btn-donate-nav):not(.btn-play):not(.btn-link):hover::before,
+.btn:not(.btn-report-live):not(.btn-donate-nav):not(.btn-play):not(.btn-link):focus-visible::before {
+    left: 160%;
+}
+
+.btn:not(.btn-report-live):not(.btn-play):not(.btn-link) > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Lift + bloom on hover */
+.btn:not(.btn-link):hover,
+.btn:not(.btn-link):focus-visible {
+    transform: translateY(-5px) scale(1.045);
+    filter: brightness(1.06) saturate(1.08);
+}
+
+.btn:not(.btn-link):active {
+    transform: translateY(-1px) scale(0.985);
+    filter: brightness(0.98);
+    transition-duration: 0.12s;
+}
+
+.btn-primary:not(.btn-report-live):hover,
+.btn-primary:not(.btn-report-live):focus-visible {
+    box-shadow:
+        0 14px 30px rgba(255, 172, 0, 0.45),
+        0 0 0 3px rgba(255, 172, 0, 0.25),
+        0 0 24px rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.04em;
+}
+
+.btn-secondary:not(.btn-report-live):hover,
+.btn-secondary:not(.btn-report-live):focus-visible {
+    box-shadow:
+        0 14px 30px rgba(26, 104, 91, 0.45),
+        0 0 0 3px rgba(26, 104, 91, 0.28),
+        0 0 22px rgba(255, 255, 255, 0.12);
+    letter-spacing: 0.04em;
+}
+
+.btn-dark:hover,
+.btn-dark:focus-visible {
+    box-shadow:
+        0 12px 26px rgba(5, 19, 17, 0.55),
+        0 0 0 3px rgba(255, 255, 255, 0.2),
+        0 0 18px rgba(255, 172, 0, 0.25);
+}
+
+.btn-light:hover,
+.btn-light:focus-visible {
+    box-shadow:
+        0 12px 26px rgba(255, 255, 255, 0.35),
+        0 0 0 3px rgba(255, 172, 0, 0.3);
+}
+
+/* Icon / square buttons — spin-glow */
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 4px;
+}
+
+.btn-square:hover,
+.btn-sm-square:hover,
+.btn-lg-square:hover,
+.btn-square:focus-visible,
+.btn-sm-square:focus-visible,
+.btn-lg-square:focus-visible {
+    transform: translateY(-4px) scale(1.12) rotate(-6deg);
+    box-shadow:
+        0 10px 22px rgba(0, 0, 0, 0.28),
+        0 0 0 3px rgba(255, 172, 0, 0.35);
+}
+
+.btn-square:hover i,
+.btn-sm-square:hover i,
+.btn-lg-square:hover i {
+    animation: btn-icon-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes btn-icon-pop {
+    0% { transform: scale(1) rotate(0deg); }
+    40% { transform: scale(1.35) rotate(-12deg); }
+    70% { transform: scale(0.95) rotate(8deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Full-width CTAs keep shine but gentler lift */
+.btn.w-100:hover,
+.btn.w-100:focus-visible {
+    transform: translateY(-3px) scale(1.015);
+}
+
+/* Donate amount radios — subtle pulse, no wild jump */
+.donate .donate-form .btn-group .btn:hover,
+.donate .donate-form .btn-group .btn:focus-visible {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 18px rgba(255, 172, 0, 0.3);
+    z-index: 2;
+}
+
+/* Footer text links — sliding underline energy */
+.footer .btn.btn-link:hover {
+    transform: translateX(6px);
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 12px rgba(255, 172, 0, 0.35);
+}
+
+/* Report Live keeps sonar; add extra magnetic pop on hover */
+.btn-report-live:hover,
+.btn-report-live:focus-visible {
+    transform: translateY(-4px) scale(1.06);
+    filter: brightness(1.1);
+    box-shadow:
+        0 0 0 0 rgba(185, 28, 28, 0.4),
+        0 12px 28px rgba(185, 28, 28, 0.55),
+        0 0 30px rgba(255, 80, 80, 0.35);
+}
+
+/* Back to top — always visible when shown, strong hover */
+.back-to-top:hover,
+.back-to-top:focus-visible {
+    transform: translateY(-6px) scale(1.1) !important;
+    filter: brightness(1.08);
+    box-shadow:
+        0 12px 28px rgba(255, 172, 0, 0.5),
+        0 0 0 4px rgba(255, 172, 0, 0.2);
+}
+
+/* Exclude back-to-top from aurora overflow clip */
+.btn.back-to-top {
+    overflow: visible !important;
+}
+
+.btn.back-to-top::before {
+    display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .btn::before,
+    .btn-square i,
+    .btn-sm-square i,
+    .btn-lg-square i {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .btn:hover,
+    .btn:focus-visible,
+    .btn-square:hover,
+    .btn-sm-square:hover,
+    .btn-lg-square:hover {
+        transform: none;
+        filter: brightness(1.05);
+    }
+
+    .btn:not(.btn-report-live):not(.btn-donate-nav):not(.btn-play):not(.btn-link):hover::before {
+        left: -140%;
+    }
+}
+
+
+
+/*** Top Bar ***/
+.top-bar {
+    height: 90px;
+    padding: 0 90px;
+}
+
+.top-bar img {
+    max-height: 80px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.top-bar h6 {
+    letter-spacing: 1px;
+}
+
+
+/*** Nav Bar ***/
+.nav-bar {
+    padding: 0 90px;
+    transition: .5s;
+}
+
+.nav-bar.fixed-top {
+    padding: 0 !important;
+    width: 100%;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 20px 0;
+    color: var(--bs-dark);
+    font-size: 18px;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--bs-white);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+/*** Report Live CTA — sonar beacon (unique urgency signal) ***/
+.btn-report-live {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    background: #B91C1C;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    z-index: 1;
+    overflow: visible;
+    white-space: nowrap;
+    animation: report-beacon-glow 1.8s ease-in-out infinite;
+}
+
+.btn-report-live:hover,
+.btn-report-live:focus {
+    color: #fff !important;
+    background: #991B1B;
+}
+
+.btn-report-live .live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    flex-shrink: 0;
+    animation: report-live-dot 1.2s ease-out infinite;
+}
+
+.btn-report-live::before,
+.btn-report-live::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 8px;
+    border: 2px solid rgba(185, 28, 28, 0.55);
+    animation: report-sonar-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.btn-report-live::after {
+    animation-delay: 1.2s;
+}
+
+@keyframes report-sonar-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1.65);
+        opacity: 0;
+    }
+}
+
+@keyframes report-live-dot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85);
+        opacity: 1;
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.55;
+    }
+}
+
+@keyframes report-beacon-glow {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 16px 3px rgba(185, 28, 28, 0.55);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-report-live,
+    .btn-report-live::before,
+    .btn-report-live::after,
+    .btn-report-live .live-dot {
+        animation: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .btn-report-live {
+        margin: 14px 0 8px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-report-live::before,
+    .btn-report-live::after {
+        display: none;
+    }
+}
+
+/*** Donate CTA — golden heartbeat + rising wish sparkles ***/
+.btn-donate-nav {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    color: #051311 !important;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    z-index: 1;
+    overflow: visible;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #FFE08A 0%, #FFAC00 45%, #F59E0B 100%);
+    background-size: 200% 200%;
+    animation:
+        donate-heartbeat 1.6s ease-in-out infinite,
+        donate-gold-shift 4s ease-in-out infinite;
+    box-shadow:
+        0 0 0 0 rgba(255, 172, 0, 0.45),
+        0 6px 18px rgba(255, 172, 0, 0.35);
+}
+
+.btn-donate-nav .donate-heart {
+    color: #B91C1C;
+    animation: donate-heart-beat 1.6s ease-in-out infinite;
+}
+
+.btn-donate-nav::before,
+.btn-donate-nav::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    pointer-events: none;
+    z-index: 0;
+    box-shadow:
+        -18px -4px 0 -1px rgba(255, 255, 255, 0.95),
+        16px -10px 0 -1px rgba(255, 240, 180, 0.95),
+        4px -18px 0 0 rgba(255, 255, 255, 0.85),
+        -10px -22px 0 -1.5px rgba(255, 220, 120, 0.9);
+    animation: donate-wish-rise 2.8s ease-in infinite;
+}
+
+.btn-donate-nav::after {
+    left: 42%;
+    animation-delay: 1.4s;
+    opacity: 0.85;
+}
+
+.btn-donate-nav:hover,
+.btn-donate-nav:focus-visible {
+    color: #051311 !important;
+    background: linear-gradient(135deg, #FFF3C4 0%, #FFB800 50%, #FF8C00 100%);
+    filter: brightness(1.1) saturate(1.2);
+    box-shadow:
+        0 14px 32px rgba(255, 172, 0, 0.55),
+        0 0 0 4px rgba(255, 172, 0, 0.28),
+        0 0 40px rgba(255, 200, 80, 0.45);
+    animation:
+        donate-heartbeat-lift 1s ease-in-out infinite,
+        donate-gold-shift 2s ease-in-out infinite;
+}
+
+.btn-donate-nav:hover .donate-heart,
+.btn-donate-nav:focus-visible .donate-heart {
+    animation: donate-heart-beat 0.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(185, 28, 28, 0.7));
+}
+
+@keyframes donate-heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 0 0 rgba(255, 172, 0, 0.45),
+            0 6px 18px rgba(255, 172, 0, 0.35);
+    }
+    14% {
+        transform: scale(1.06);
+        box-shadow:
+            0 0 0 8px rgba(255, 172, 0, 0),
+            0 10px 24px rgba(255, 172, 0, 0.5);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.04);
+    }
+    56% {
+        transform: scale(1);
+    }
+}
+
+@keyframes donate-heartbeat-lift {
+    0%,
+    100% {
+        transform: translateY(-5px) scale(1.08);
+    }
+    14% {
+        transform: translateY(-7px) scale(1.14);
+    }
+    28% {
+        transform: translateY(-5px) scale(1.08);
+    }
+    42% {
+        transform: translateY(-6px) scale(1.11);
+    }
+    56% {
+        transform: translateY(-5px) scale(1.08);
+    }
+}
+
+@keyframes donate-gold-shift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes donate-heart-beat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.35);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.2);
+    }
+    56% {
+        transform: scale(1);
+    }
+}
+
+@keyframes donate-wish-rise {
+    0% {
+        transform: translate(-50%, 0) scale(0.4);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -42px) scale(1);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-donate-nav,
+    .btn-donate-nav::before,
+    .btn-donate-nav::after,
+    .btn-donate-nav .donate-heart {
+        animation: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .btn-donate-nav {
+        margin: 8px 0 8px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-donate-nav::before,
+    .btn-donate-nav::after {
+        display: none;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        margin-top: 20px;
+        border-top: 1px solid var(--bs-white);
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header Carousel ***/
+.header-carousel {
+    position: relative;
+    background: url(../img/bg.jpg) center center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header-carousel .owl-stage-outer {
+    overflow: hidden;
+}
+
+.header-carousel .carousel-img {
+    position: relative;
+}
+
+.header-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    width: 45px;
+    height: 45px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--bs-dark);
+    background: var(--bs-primary);
+}
+
+.page-header {
+    background: url(../img/bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--bs-tertiary);
+}
+
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item a {
+    font-size: 18px;
+    color: var(--bs-primary);
+}
+
+.page-header .breadcrumb-item.active {
+    color: var(--bs-dark);
+}
+
+
+/*** Video ***/
+.btn-play {
+    position: relative;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: var(--bs-dark);
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: var(--bs-dark);
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: var(--bs-dark);
+    transition: all 200ms;
+}
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    left: -1px;
+    border-left: 16px solid var(--bs-white);
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+        opacity: 0;
+    }
+}
+
+#videoModal .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+#videoModal .modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+#videoModal .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -30px;
+    z-index: 999;
+    font-size: 30px;
+    font-weight: normal;
+    color: var(--bs-white);
+    background: #000000;
+    opacity: 1;
+}
+
+
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 0px;
+    top: 5px;
+    left: -40px;
+    border-top: 2px solid var(--bs-primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 0px;
+    bottom: 6px;
+    left: -60px;
+    border-bottom: 2px solid var(--bs-primary);
+    z-index: -1;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+
+
+/*** About ***/
+.about-img {
+    position: relative;
+}
+
+.about-img::before,
+.about-img::after {
+    position: absolute;
+    content: "";
+    width: 33%;
+    height: 90px;
+    background: var(--bs-white);
+}
+
+.about-img::before {
+    top: 0px;
+    left: 0px;
+}
+
+.about-img::after {
+    right: 0px;
+    bottom: 0px;
+}
+
+
+/*** Service ***/
+.service-title {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(../img/bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.service-item {
+    overflow: hidden;
+}
+
+.service-item .btn-square {
+    width: 65px;
+    height: 65px;
+}
+
+.service-item a {
+    position: relative;
+    padding: 0;
+    font-size: 14px;
+    line-height: 14px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.service-item a::after {
+    position: absolute;
+    content: "";
+    width: 500%;
+    height: 0;
+    left: 100%;
+    bottom: 3px;
+    margin-left: 10px;
+    border-bottom: 2px solid var(--bs-primary);
+}
+
+
+/*** Donation ***/
+.donation-item {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .05);
+    transition: .5s;
+}
+
+.donation-item:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+}
+
+.donation-item .donation-progress {
+    width: 80px;
+}
+
+.donation-item .progress .progress-bar {
+    height: 20px;
+    overflow: visible;
+    transition: 3s;
+}
+
+
+/*** Banner ***/
+.banner .banner-inner {
+    position: relative;
+    background: url(../img/bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.banner .banner-inner::before,
+.banner .banner-inner::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+}
+
+.banner .banner-inner::before {
+    top: 0;
+    left: 0;
+    border-top: 150px solid var(--bs-primary);
+    border-right: 150px solid transparent;
+}
+
+.banner .banner-inner::after {
+    right: 0;
+    bottom: 0;
+    border-bottom: 150px solid var(--bs-secondary);
+    border-left: 150px solid transparent;
+}
+
+
+/*** Event ***/
+.event-item {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .05);
+    transition: .5s;
+}
+
+.event-item:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+}
+
+
+/*** Donate ***/
+.donate .donate-text {
+    position: relative;
+    background: url(../img/bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.donate .donate-text::before,
+.donate .donate-text::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+}
+
+.donate .donate-text::before {
+    top: 0;
+    left: 0;
+    border-top: 150px solid var(--bs-primary);
+    border-right: 150px solid transparent;
+}
+
+.donate .donate-text::after {
+    right: 0;
+    bottom: 0;
+    border-bottom: 150px solid var(--bs-secondary);
+    border-left: 150px solid transparent;
+}
+
+.donate .donate-form .form-control {
+    border: none;
+    background: rgba(255, 255, 255, .5);
+}
+
+.donate .donate-form .btn-group {
+    display: flex;
+}
+
+.donate .donate-form .btn-group .btn {
+    margin: 0;
+    padding: 0;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: var(--bs-tertiary);
+    background: rgba(255, 255, 255, .5);
+}
+
+.donate .donate-form .btn-group .btn-check:checked+.btn {
+    border: none;
+    background: var(--bs-white);
+}
+
+
+
+/*** Team ***/
+.team-item {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .05);
+    transition: .5s;
+}
+
+.team-item:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+}
+
+.team-item .team-detail span {
+    letter-spacing: 2px;
+}
+
+
+
+/*** Testimonial ***/
+.testimonial-title {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(../img/bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.testimonial-img {
+    position: relative;
+    padding: 45px 0 45px 90px;
+}
+
+.testimonial-img::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: calc(50% + 45px);
+    height: 100%;
+    background: var(--bs-primary);
+    z-index: -1;
+}
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-carousel .owl-prev,
+.testimonial-carousel .owl-next {
+    width: 45px;
+    height: 45px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--bs-white);
+    background: var(--bs-secondary);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-prev:hover,
+.testimonial-carousel .owl-next:hover {
+    color: var(--bs-secondary);
+    background: var(--bs-white);
+}
+
+@media (max-width: 768px) {
+    .testimonial-carousel .owl-nav {
+        top: 6.3rem;
+    }
+}
+
+
+
+/*** Footer ***/
+.footer {
+    color: var(--bs-tertiary);
+    background: linear-gradient(rgba(5, 19, 17, .95), rgba(5, 19, 17, .95)), url(../img/bg-footer.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--bs-tertiary);
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--bs-light);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+
+/*** Responsive Fixes ***/
+@media (max-width: 991.98px) {
+    .top-bar {
+        height: auto;
+        min-height: 90px;
+        padding: 15px;
+    }
+
+    .nav-bar {
+        padding: 0 15px;
+    }
+
+    .header-carousel .owl-nav {
+        left: 15px;
+    }
+
+    .testimonial-img {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-title::before,
+    .section-title::after {
+        width: 100%;
+        left: 0;
+    }
+
+    .carousel-text .display-1 {
+        font-size: calc(1.5rem + 2vw);
+    }
+
+    .header-carousel .owl-nav .owl-prev,
+    .header-carousel .owl-nav .owl-next {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .top-bar {
+        padding: 10px 12px;
+    }
+
+    .nav-bar {
+        padding: 0 12px;
+    }
+
+    .banner .banner-inner::before,
+    .donate .donate-text::before {
+        border-top-width: 80px;
+        border-right-width: 80px;
+    }
+
+    .banner .banner-inner::after,
+    .donate .donate-text::after {
+        border-bottom-width: 80px;
+        border-left-width: 80px;
+    }
+}
