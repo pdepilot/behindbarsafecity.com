@@ -528,6 +528,26 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-start">
+                                    <p class="mb-2 text-dark fw-semi-bold">Payment Method</p>
+                                    <div class="payment-methods" role="radiogroup" aria-label="Payment Method">
+                                        <div class="payment-method-option">
+                                            <input type="radio" class="btn-check" name="payment_method" id="paystack" value="paystack" autocomplete="off" required checked>
+                                            <label class="payment-method-btn" for="paystack">
+                                                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                                <span>Paystack</span>
+                                            </label>
+                                        </div>
+                                        <div class="payment-method-option">
+                                            <input type="radio" class="btn-check" name="payment_method" id="flutterwave" value="flutterwave" autocomplete="off">
+                                            <label class="payment-method-btn" for="flutterwave">
+                                                <i class="fa fa-wallet" aria-hidden="true"></i>
+                                                <span>Flutterwave</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <p class="payment-method-status" id="paymentMethodStatus" aria-live="polite">Paystack selected</p>
+                                </div>
+                                <div class="col-12 text-start">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="anonymous" name="anonymous">
                                         <label class="form-check-label text-dark" for="anonymous">
@@ -844,6 +864,7 @@
             var anonymous = document.getElementById("anonymous").checked;
             var cause = document.getElementById("cause").value;
             var message = document.getElementById("message").value.trim();
+            var paymentMethodEl = document.querySelector('input[name="payment_method"]:checked');
             var entry = {
                 id: "don-" + Date.now(),
                 name: anonymous ? "Anonymous Donor" : document.getElementById("name").value.trim(),
@@ -852,6 +873,7 @@
                 amount: Number(document.getElementById("amount").value) || 0,
                 currency: document.getElementById("currency").value,
                 cause: cause,
+                paymentMethod: paymentMethodEl ? paymentMethodEl.value : "",
                 anonymous: anonymous,
                 createdAt: new Date().toISOString()
             };
@@ -861,6 +883,14 @@
             list.push(entry);
             localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
             window.location.href = "Charitize/donations.html";
+        });
+
+        var statusEl = document.getElementById("paymentMethodStatus");
+        var methodLabels = { paystack: "Paystack selected", flutterwave: "Flutterwave selected" };
+        form.querySelectorAll('input[name="payment_method"]').forEach(function (input) {
+            input.addEventListener("change", function () {
+                if (statusEl) statusEl.textContent = methodLabels[input.value] || "Payment method selected";
+            });
         });
     })();
     </script>

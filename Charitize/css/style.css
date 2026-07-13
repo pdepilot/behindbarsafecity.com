@@ -1031,6 +1031,98 @@ img {
     background: var(--bs-white);
 }
 
+/* Payment method selection */
+.donate .donate-form .payment-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+}
+
+.donate .donate-form .payment-method-option {
+    position: relative;
+}
+
+.donate .donate-form .payment-methods .btn-check {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.donate .donate-form .payment-method-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 100%;
+    min-height: 72px;
+    margin: 0;
+    padding: 0.85rem 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--bs-dark);
+    font-weight: 600;
+    cursor: pointer;
+    overflow: visible;
+    isolation: auto;
+    transform: none;
+    box-shadow: none;
+    transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.donate .donate-form .payment-method-btn::before {
+    display: none !important;
+}
+
+.donate .donate-form .payment-method-btn:hover,
+.donate .donate-form .payment-method-btn:focus-visible {
+    transform: none;
+    filter: none;
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(26, 104, 91, 0.35);
+    box-shadow: none;
+}
+
+.donate .donate-form .payment-method-btn:active {
+    transform: none;
+}
+
+.donate .donate-form .payment-method-btn i {
+    font-size: 1.15rem;
+    color: var(--bs-secondary);
+}
+
+.donate .donate-form .btn-check:checked + .payment-method-btn {
+    background: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(26, 104, 91, 0.28);
+}
+
+.donate .donate-form .btn-check:checked + .payment-method-btn i {
+    color: var(--bs-primary);
+}
+
+.donate .donate-form .btn-check:focus-visible + .payment-method-btn {
+    outline: 3px solid rgba(255, 172, 0, 0.55);
+    outline-offset: 2px;
+}
+
+.donate .donate-form .payment-method-status {
+    min-height: 1.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--bs-secondary);
+}
+
+
+
 
 
 /*** Team ***/
