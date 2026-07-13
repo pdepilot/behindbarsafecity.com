@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Report Incident | Safe City Volunteer Foundation</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="report incident, missing persons, kidnapping, human rights, abuse, trafficking, Safe City Volunteer Foundation, Behind Bars Human Rights Foundation, Nigeria" name="keywords">
+    <meta content="Report missing persons, human rights violations, abuse, kidnapping cases, security threats, and other emergencies directly to Safe City Volunteer Foundation and Behind Bars Human Rights Foundation." name="description">
+    <meta property="og:title" content="Report Incident | Safe City Volunteer Foundation">
+    <meta property="og:description" content="Report missing persons, human rights violations, abuse, kidnapping cases, security threats, and other emergencies directly to Safe City Volunteer Foundation and Behind Bars Human Rights Foundation.">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/report-live.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-4 text-center text-lg-start">
+                <a href="../index.html">
+                    <img src="img/safe-city-logo.jpg" alt="Safe City Volunteer Foundation" class="m-0" style="height: 80px;">
+                    <img src="img/behind_bar_logo.png" alt="Behind Bars Human Rights Foundation" class="m-0 ms-2" style="height: 80px;">
+                </a>
+            </div>
+            <div class="col-lg-8 d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-phone-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Call Us / Emergency</h6>
+                                <span class="text-white">+234 800 723 3248</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-envelope-open text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Mail Us</h6>
+                                <span class="text-white">info@safecitybehindbars.org</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-end">
+                            <div class="flex-shrink-0 btn-square bg-primary">
+                                <i class="fa fa-map-marker-alt text-dark"></i>
+                            </div>
+                            <div class="ms-2">
+                                <h6 class="text-primary mb-0">Address</h6>
+                                <span class="text-white">Asaba, Delta State, Nigeria</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-secondary px-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="nav-bar">
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-lg-0">
+                <h4 class="d-lg-none m-0">Menu</h4>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto">
+                        <a href="../index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About Us</a>
+                        <a href="services.html" class="nav-item nav-link">Services</a>
+                        <a href="donation.html" class="nav-item nav-link">Donations</a>
+                        <div class="nav-item dropdown">
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
+                            <div class="dropdown-menu bg-light m-0">
+                                <a href="event.html" class="dropdown-item">Events</a>
+                                <a href="feature.html" class="dropdown-item">Our Mission</a>
+                                <a href="team.html" class="dropdown-item">Volunteer</a>
+                                <a href="testimonial.html" class="dropdown-item">Rescue Stories</a>
+                                <a href="report-live.html" class="dropdown-item active">Report Live</a>
+                                <a href="404.html" class="dropdown-item">Get Help</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a class="btn btn-donate-nav d-lg-none" href="donation.html" aria-label="Donate to support our mission">
+                            <i class="fa fa-heart donate-heart" aria-hidden="true"></i>
+                            Donate
+                        </a>
+                        <a class="btn btn-report-live d-lg-none" href="report-live.html" aria-label="Report Live - submit an urgent case">
+                            <span class="live-dot" aria-hidden="true"></span>
+                            Report Live
+                        </a>
+                    </div>
+                    <div class="d-none d-lg-flex ms-auto align-items-center">
+                        <a class="btn btn-donate-nav me-2" href="donation.html" aria-label="Donate to support our mission">
+                            <i class="fa fa-heart donate-heart" aria-hidden="true"></i>
+                            Donate
+                        </a>
+                        <a class="btn btn-report-live me-2" href="report-live.html" aria-label="Report Live - submit an urgent case">
+                            <span class="live-dot" aria-hidden="true"></span>
+                            Report Live
+                        </a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-dark ms-2" href="#!" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-4">
+            <h1 class="display-3 animated slideInDown">Report an Incident</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#!">More</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Report Live</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Hero Intro Start -->
+    <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-9">
+                    <h2 class="display-6 mb-3">Help us respond quickly by providing accurate information.</h2>
+                    <p class="fs-5 mb-4">All reports are treated confidentially and reviewed by our response team at Safe City Volunteer Foundation and Behind Bars Human Rights Foundation.</p>
+                    <div class="d-flex justify-content-center flex-wrap gap-2">
+                        <a class="btn btn-secondary py-3 px-4" href="#report-form" data-scroll-target="#report-form">Submit Report</a>
+                        <a class="btn btn-dark py-3 px-4" href="#emergency-contacts" data-scroll-target="#emergency-contacts">Emergency Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Intro End -->
+
+
+    <!-- Emergency Notice Start -->
+    <div class="container-fluid pb-4 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="bg-secondary text-white p-4">
+                <div class="d-flex align-items-start">
+                    <div class="flex-shrink-0 btn-square bg-primary me-3">
+                        <i class="fa fa-triangle-exclamation text-dark"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-primary mb-2">Emergency Notice</h4>
+                        <p class="mb-0">Emergency situations involving kidnapping, child trafficking, life-threatening violence, or immediate danger should also be reported directly to security agencies while submitting this form. Call Nigeria Emergency Services and our hotline <strong class="text-primary">+234 800 723 3248</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Emergency Notice End -->
+
+
+    <!-- Success Notification -->
+    <div class="container-fluid">
+        <div class="container">
+            <div id="reportSuccessBox" class="bg-primary p-4 mb-4 wow fadeIn" role="status" aria-live="polite">
+                <h3 class="mb-2"><i class="fa fa-circle-check me-2"></i>Report Received</h3>
+                <p class="mb-2">Your report has been received successfully. Please keep this reference number for future communication.</p>
+                <h2 class="mb-0" id="generatedReference">SCVF-2026-000000</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Report Form Start -->
+    <div class="container-fluid py-5" id="report-form">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 640px;">
+                <p class="section-title bg-white text-center text-primary px-3">Secure Portal</p>
+                <h1 class="display-6 mb-4">Incident Report Form</h1>
+                <p class="mb-0">Provide as much accurate detail as possible. Fields marked required help our team prioritize and respond faster.</p>
+            </div>
+
+            <div id="formValidationAlert" class="alert alert-danger d-none mt-4" role="alert"></div>
+
+            <form id="incidentReportForm" class="mt-4" novalidate enctype="multipart/form-data" method="post" action="#">
+                <input type="hidden" name="csrf_token" id="csrfToken" value="pending-token">
+                <!-- Honeypot spam prevention -->
+                <div class="report-honeypot" aria-hidden="true">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <!-- Section 1 -->
+                <div class="report-section-card bg-white p-4 p-md-5 mb-4 wow fadeIn" data-wow-delay="0.1s">
+                    <h3 class="section-heading"><span class="text-primary">01.</span> Reporter Information</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="fullName" name="full_name" placeholder="Full Name" autocomplete="name">
+                                <label for="fullName">Full Name <span id="nameOptionalHint" class="text-muted"></span></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control" id="phoneNumber" name="phone" placeholder="Phone Number" autocomplete="tel">
+                                <label for="phoneNumber">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="emailAddress" name="email" placeholder="Email Address" autocomplete="email">
+                                <label for="emailAddress">Email Address</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="altContact" name="alt_contact" placeholder="Alternative Contact">
+                                <label for="altContact">Alternative Contact</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <select class="form-select" id="relationship" name="relationship" required>
+                                    <option value="" selected disabled>Select relationship</option>
+                                    <option>Victim</option>
+                                    <option>Witness</option>
+                                    <option>Relative</option>
+                                    <option>Volunteer</option>
+                                    <option>Community Member</option>
+                                    <option>Anonymous Reporter</option>
+                                </select>
+                                <label for="relationship">Relationship to Incident</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="report-section-card bg-white p-4 p-md-5 mb-4 wow fadeIn" data-wow-delay="0.15s">
+                    <h3 class="section-heading"><span class="text-primary">02.</span> Incident Type</h3>
+                    <div class="form-floating">
+                        <select class="form-select" id="incidentType" name="incident_type" required>
+                            <option value="" selected disabled>Select incident type</option>
+                            <option>Missing Person</option>
+                            <option>Kidnapping</option>
+                            <option>Human Rights Abuse</option>
+                            <option>Wrongful Detention</option>
+                            <option>Domestic Violence</option>
+                            <option>Child Abuse</option>
+                            <option>Human Trafficking</option>
+                            <option>Sexual Violence</option>
+                            <option>Community Security Threat</option>
+                            <option>Police Misconduct</option>
+                            <option>Fraud or Scam</option>
+                            <option>Cybercrime</option>
+                            <option>Other</option>
+                        </select>
+                        <label for="incidentType">Type of Incident</label>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="report-section-card bg-white p-4 p-md-5 mb-4 wow fadeIn" data-wow-delay="0.2s">
+                    <h3 class="section-heading"><span class="text-primary">03.</span> Incident Details</h3>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="incidentTitle" name="incident_title" placeholder="Incident Title" required>
+                                <label for="incidentTitle">Incident Title</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="date" class="form-control" id="incidentDate" name="incident_date" required>
+                                <label for="incidentDate">Date of Incident</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="time" class="form-control" id="incidentTime" name="incident_time">
+                                <label for="incidentTime">Time of Incident</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-select" id="incidentState" name="state" required>
+                                    <option value="" disabled>Select state</option>
+                                    <option>Abia</option>
+                                    <option>Adamawa</option>
+                                    <option>Akwa Ibom</option>
+                                    <option>Anambra</option>
+                                    <option>Bauchi</option>
+                                    <option>Bayelsa</option>
+                                    <option>Benue</option>
+                                    <option>Borno</option>
+                                    <option>Cross River</option>
+                                    <option selected>Delta</option>
+                                    <option>Ebonyi</option>
+                                    <option>Edo</option>
+                                    <option>Ekiti</option>
+                                    <option>Enugu</option>
+                                    <option>FCT - Abuja</option>
+                                    <option>Gombe</option>
+                                    <option>Imo</option>
+                                    <option>Jigawa</option>
+                                    <option>Kaduna</option>
+                                    <option>Kano</option>
+                                    <option>Katsina</option>
+                                    <option>Kebbi</option>
+                                    <option>Kogi</option>
+                                    <option>Kwara</option>
+                                    <option>Lagos</option>
+                                    <option>Nasarawa</option>
+                                    <option>Niger</option>
+                                    <option>Ogun</option>
+                                    <option>Ondo</option>
+                                    <option>Osun</option>
+                                    <option>Oyo</option>
+                                    <option>Plateau</option>
+                                    <option>Rivers</option>
+                                    <option>Sokoto</option>
+                                    <option>Taraba</option>
+                                    <option>Yobe</option>
+                                    <option>Zamfara</option>
+                                </select>
+                                <label for="incidentState">State</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="incidentLga" name="lga" placeholder="Local Government Area">
+                                <label for="incidentLga">Local Government Area</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="incidentCommunity" name="community" placeholder="Community/Town">
+                                <label for="incidentCommunity">Community/Town</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="incidentFullAddress" name="full_address" placeholder="Full Address">
+                                <label for="incidentFullAddress">Full Address</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="incidentDescription" name="description" placeholder="Describe the incident" style="height: 180px;" required></textarea>
+                                <label for="incidentDescription">Describe the incident in detail</label>
+                            </div>
+                            <p class="small text-muted mt-2 mb-0 char-counter" id="descCharCount">0 / 50 minimum characters</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="report-section-card bg-white p-4 p-md-5 mb-4 wow fadeIn" data-wow-delay="0.25s">
+                    <h3 class="section-heading"><span class="text-primary">04.</span> Victim Information <span class="fs-6 text-muted fw-normal">(optional where unknown)</span></h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="victimName" name="victim_name" placeholder="Victim Name">
+                                <label for="victimName">Victim Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="victimAge" name="victim_age" placeholder="Age" min="0" max="120">
+                                <label for="victimAge">Age</label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-floating">
+                                <select class="form-select" id="victimGender" name="victim_gender">
+                                    <option value="" selected disabled>Select</option>
+                                    <option>Female</option>
+                                    <option>Male</option>
+                                    <option>Other</option>
+                                    <option>Prefer not to say</option>
+                                </select>
+                                <label for="victimGender">Gender</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control" id="victimPhone" name="victim_phone" placeholder="Phone Number">
+                                <label for="victimPhone">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="victimLastLocation" name="victim_last_location" placeholder="Last Known Location">
+                                <label for="victimLastLocation">Last Known Location</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="report-section-card bg-white p-4 p-md-5 mb-4 wow fadeIn" data-wow-delay="0.3s">
+                    <h3 class="section-heading"><span class="text-primary">05.</span> Suspect Information <span class="fs-6 text-muted fw-normal">(optional)</span></h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="suspectName" name="suspect_name" placeholder="Suspect Name">
+                                <label for="suspectName">Suspect Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="suspectAlias" name="suspect_alias" placeholder="Nickname/Alias">
+                                <label for="suspectAlias">Nickname/Alias</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="suspectDescription" name="suspect_description" placeholder="Physical Description">
+                                <label for="suspectDescription">Physical Description</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="suspectAddress" name="suspect_address" placeholder="Known Address">
+                                <label for="suspectAddress">Known Address</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="suspectVehicle" name="suspect_vehicle" placeholder="Vehicle Information">
+                                <label for="suspectVehicle">Vehicle Information</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" id="suspectNotes" name="suspect_notes" placeholder="Additional notes" style="height: 120px;"></textarea>
+                                <label for="suspectNotes">Additional Notes</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="report-section-card bg-white p-4 p-md-5 mb-4 wow fadeIn" data-wow-delay="0.35s">
+                    <h3 class="section-heading"><span class="text-primary">06.</span> Evidence Upload</h3>
+                    <p class="mb-3">Upload images, documents, or videos that support this report. Max <strong>5 files</strong>. Images &amp; documents: up to <strong>10 MB</strong> each. Videos (MP4/MOV/WEBM): up to <strong>20 MB</strong> each. Allowed: JPG, PNG, GIF, WEBP, PDF, DOC, DOCX, MP4, MOV, WEBM.</p>
+                    <div class="mb-3">
+                        <label for="evidenceFiles" class="form-label">Select evidence files</label>
+                        <input class="form-control" type="file" id="evidenceFiles" name="evidence[]" multiple accept=".jpg,.jpeg,.png,.gif,.webp,.pdf,.doc,.docx,.mp4,.mov,.webm,.avi,image/*,application/pdf,video/*">
+                    </div>
+                    <div id="evidencePreview" class="report-file-preview" aria-live="polite"></div>
+                </div>
+
+                <!-- Section 7 -->
+                <div class="report-section-card bg-white p-4 p-md-5 mb-4 wow fadeIn" data-wow-delay="0.4s">
+                    <h3 class="section-heading"><span class="text-primary">07.</span> Location Capture</h3>
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="incidentAddress" name="incident_address" placeholder="Incident Address">
+                                        <label for="incidentAddress">Incident Address</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="gpsLatitude" name="latitude" placeholder="Latitude" inputmode="decimal">
+                                        <label for="gpsLatitude">GPS Latitude</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="gpsLongitude" name="longitude" placeholder="Longitude" inputmode="decimal">
+                                        <label for="gpsLongitude">GPS Longitude</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button type="button" class="btn btn-primary py-2 px-4" id="detectLocationBtn">
+                                            <i class="fa fa-location-crosshairs me-2"></i>Detect My Location
+                                        </button>
+                                        <button type="button" class="btn btn-secondary py-2 px-4" id="useCurrentLocationBtn">
+                                            <i class="fa fa-map-pin me-2"></i>Use Current Location
+                                        </button>
+                                    </div>
+                                    <p class="small text-secondary mt-2 mb-0" id="locationStatus">Location access is optional but helps responders act faster.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="location-preview-card bg-light p-2 h-100">
+                                <iframe id="locationMapFrame" class="w-100 h-100"
+                                    src="https://www.google.com/maps?q=Asaba,+Delta+State,+Nigeria&output=embed"
+                                    title="Incident location map preview"
+                                    style="min-height: 220px; border:0;" loading="lazy"
+                                    allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 8 -->
+                <div class="report-section-card bg-white p-4 p-md-5 mb-4 wow fadeIn" data-wow-delay="0.45s">
+                    <h3 class="section-heading"><span class="text-primary">08.</span> Confidentiality &amp; Consent</h3>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="confirmAccurate" name="confirm_accurate" required>
+                        <label class="form-check-label" for="confirmAccurate">I confirm the information provided is accurate to the best of my knowledge.</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="confirmFalseReporting" name="confirm_false" required>
+                        <label class="form-check-label" for="confirmFalseReporting">I understand false reporting may delay investigations and harm genuine victims.</label>
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="consentProcessing" name="consent_processing" required>
+                        <label class="form-check-label" for="consentProcessing">I consent to Safe City Volunteer Foundation and Behind Bars Human Rights Foundation processing this information for response and referral purposes.</label>
+                    </div>
+                    <button class="btn btn-primary py-3 px-5" type="submit" id="submitReportBtn">
+                        <i class="fa fa-paper-plane me-2"></i>Submit Report
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Report Form End -->
+
+
+    <!-- Track Report Start -->
+    <div class="container-fluid py-5 bg-light" id="track-report">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                    <p class="section-title bg-light text-start text-primary pe-3">Follow Up</p>
+                    <h1 class="display-6 mb-4">Track Existing Report</h1>
+                    <p class="mb-4">Enter your report reference number to view the current status of your submission.</p>
+                    <form id="trackReportForm">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="trackReference" name="track_reference" placeholder="Report Reference Number" autocomplete="off">
+                            <label for="trackReference">Report Reference Number</label>
+                            <div class="invalid-feedback">Please enter a reference number.</div>
+                        </div>
+                        <button class="btn btn-secondary py-3 px-4" type="submit">
+                            <i class="fa fa-magnifying-glass me-2"></i>Track Report
+                        </button>
+                    </form>
+                </div>
+                <div class="col-lg-7 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="bg-white p-4 report-section-card">
+                        <h3 class="mb-3">Status Guide</h3>
+                        <div class="report-status-list" id="trackStatusList">
+                            <div class="status-item" data-status="Submitted"><span class="status-dot"></span><div><strong>Submitted</strong><br><span class="small text-muted">Report received by our portal.</span></div></div>
+                            <div class="status-item" data-status="Under Review"><span class="status-dot"></span><div><strong>Under Review</strong><br><span class="small text-muted">Team is assessing urgency and details.</span></div></div>
+                            <div class="status-item" data-status="Investigation Ongoing"><span class="status-dot"></span><div><strong>Investigation Ongoing</strong><br><span class="small text-muted">Active follow-up in progress.</span></div></div>
+                            <div class="status-item" data-status="Referred"><span class="status-dot"></span><div><strong>Referred</strong><br><span class="small text-muted">Escalated to partners or agencies.</span></div></div>
+                            <div class="status-item" data-status="Resolved"><span class="status-dot"></span><div><strong>Resolved</strong><br><span class="small text-muted">Matter addressed to available capacity.</span></div></div>
+                            <div class="status-item" data-status="Closed"><span class="status-dot"></span><div><strong>Closed</strong><br><span class="small text-muted">Case file closed.</span></div></div>
+                        </div>
+                        <div id="trackResultBox" class="bg-light p-3 mt-3">
+                            <p class="mb-1"><strong>Reference:</strong> <span id="trackResultRef">—</span></p>
+                            <p class="mb-1"><strong>Status:</strong> <span id="trackResultStatus">—</span></p>
+                            <p class="mb-0 small text-muted" id="trackResultMeta"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Track Report End -->
+
+
+    <!-- Emergency Contacts Start -->
+    <div class="container-fluid py-5" id="emergency-contacts">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 560px;">
+                <p class="section-title bg-white text-center text-primary px-3">Contacts</p>
+                <h1 class="display-6 mb-4">Emergency Contacts</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-item bg-light h-100 p-4">
+                        <div class="btn-square bg-primary mb-4">
+                            <i class="fa fa-shield-halved fa-2x text-dark"></i>
+                        </div>
+                        <h3>Safe City Volunteer Foundation</h3>
+                        <p class="mb-1"><i class="fa fa-phone text-primary me-2"></i>+234 800 723 3248</p>
+                        <p class="mb-1"><i class="fa fa-envelope text-primary me-2"></i>info@safecitybehindbars.org</p>
+                        <p class="mb-1"><i class="fab fa-whatsapp text-primary me-2"></i>+234 800 723 3248</p>
+                        <p class="mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>Asaba, Delta State, Nigeria</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light h-100 p-4">
+                        <div class="btn-square bg-primary mb-4">
+                            <i class="fa fa-scale-balanced fa-2x text-dark"></i>
+                        </div>
+                        <h3>Behind Bars Human Rights Foundation</h3>
+                        <p class="mb-1"><i class="fa fa-phone text-primary me-2"></i>+234 800 723 3248</p>
+                        <p class="mb-1"><i class="fa fa-envelope text-primary me-2"></i>info@safecitybehindbars.org</p>
+                        <p class="mb-1"><i class="fab fa-whatsapp text-primary me-2"></i>+234 800 723 3248</p>
+                        <p class="mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>Asaba, Delta State, Nigeria</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="service-item bg-light h-100 p-4">
+                        <div class="btn-square bg-primary mb-4">
+                            <i class="fa fa-truck-medical fa-2x text-dark"></i>
+                        </div>
+                        <h3>Emergency Response Team</h3>
+                        <p class="mb-1"><i class="fa fa-phone text-primary me-2"></i>+234 800 723 3248</p>
+                        <p class="mb-1"><i class="fa fa-envelope text-primary me-2"></i>info@safecitybehindbars.org</p>
+                        <p class="mb-1"><i class="fab fa-whatsapp text-primary me-2"></i>+234 800 723 3248</p>
+                        <p class="mb-0"><i class="fa fa-map-marker-alt text-primary me-2"></i>Asaba, Delta State, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Emergency Contacts End -->
+
+
+    <!-- FAQ Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 560px;">
+                <p class="section-title bg-light text-center text-primary px-3">FAQ</p>
+                <h1 class="display-6 mb-4">Frequently Asked Questions</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-9 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="accordion" id="reportFaq">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeading1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    How long does review take?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#reportFaq">
+                                <div class="accordion-body">
+                                    Urgent life-threatening reports are prioritized immediately. Other cases are typically reviewed within 24–72 hours depending on volume and available response capacity.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                    Can I report anonymously?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#reportFaq">
+                                <div class="accordion-body">
+                                    Yes. Select <strong>Anonymous Reporter</strong> under Relationship to Incident. You may still share a contact method if you want follow-up, but it is not required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                    Can I update a submitted report?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#reportFaq">
+                                <div class="accordion-body">
+                                    Contact our team with your reference number via phone or email. Additional details and evidence can be added after the initial submission.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                    Will my information remain confidential?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#reportFaq">
+                                <div class="accordion-body">
+                                    Reports are handled confidentially and shared only with authorized response personnel or partner agencies when necessary for protection, rescue, or legal action.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqHeading5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                    Can I upload evidence later?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#reportFaq">
+                                <div class="accordion-body">
+                                    Yes. Submit the report with the details you have now, then send additional files later referencing your report number.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQ End -->
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-6 mb-4">Stay Informed on Our Work</h1>
+                    <div class="position-relative w-100 mb-2">
+                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
+                            style="height: 60px;">
+                        <button type="button"
+                            class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <p class="mb-0">Receive updates on rescue missions, legal aid, and community safety programs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5 py-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Our Office</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Asaba, Delta State, Nigeria</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+234 800 723 3248</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@safecitybehindbars.org</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary me-2" href="#!"><i class="fab fa-x-twitter"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="#!"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact</a>
+                    <a class="btn btn-link" href="report-live.html">Report Live</a>
+                    <a class="btn btn-link" href="donation.html">Donate</a>
+                    <a class="btn btn-link" href="team.html">Volunteer</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Response Hours</h4>
+                    <p class="mb-1">Monday - Friday</p>
+                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
+                    <p class="mb-1">Saturday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Emergency Hotline</p>
+                    <h6 class="text-light">24/7</h6>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Gallery</h4>
+                    <div class="row g-2">
+                        <div class="col-4">
+                            <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="Foundation outreach gallery" loading="lazy">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid w-100" src="img/gallery-2.jpg" alt="Foundation outreach gallery" loading="lazy">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid w-100" src="img/gallery-3.jpg" alt="Foundation outreach gallery" loading="lazy">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid w-100" src="img/gallery-4.jpg" alt="Foundation outreach gallery" loading="lazy">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid w-100" src="img/gallery-5.jpg" alt="Foundation outreach gallery" loading="lazy">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid w-100" src="img/gallery-6.jpg" alt="Foundation outreach gallery" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright pt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="fw-semi-bold" href="../index.html">Behind Bars Human Rights Foundation &amp; Safe City Volunteer Foundation</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        Designed By <span class="fw-semi-bold">ERIBS Tech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#!" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/report-live.js"></script>
+</body>
+
+</html>

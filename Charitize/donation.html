@@ -107,15 +107,16 @@
                     <div class="navbar-nav me-auto">
                         <a href="../index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About Us</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="services.html" class="nav-item nav-link">Services</a>
                         <a href="donation.html" class="nav-item nav-link active">Donations</a>
                         <div class="nav-item dropdown">
                             <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                             <div class="dropdown-menu bg-light m-0">
-                                <a href="event.html" class="dropdown-item">Event</a>
+                                <a href="event.html" class="dropdown-item">Events</a>
                                 <a href="feature.html" class="dropdown-item">Our Mission</a>
                                 <a href="team.html" class="dropdown-item">Volunteer</a>
                                 <a href="testimonial.html" class="dropdown-item">Rescue Stories</a>
+                                <a href="report-live.html" class="dropdown-item">Report Live</a>
                                 <a href="404.html" class="dropdown-item">Get Help</a>
                             </div>
                         </div>
@@ -124,7 +125,7 @@
                             <i class="fa fa-heart donate-heart" aria-hidden="true"></i>
                             Donate
                         </a>
-                        <a class="btn btn-report-live d-lg-none" href="contact.html" aria-label="Report Live - submit an urgent case">
+                        <a class="btn btn-report-live d-lg-none" href="report-live.html" aria-label="Report Live - submit an urgent case">
                             <span class="live-dot" aria-hidden="true"></span>
                             Report Live
                         </a>
@@ -134,7 +135,7 @@
                             <i class="fa fa-heart donate-heart" aria-hidden="true"></i>
                             Donate
                         </a>
-                        <a class="btn btn-report-live me-2" href="contact.html" aria-label="Report Live - submit an urgent case">
+                        <a class="btn btn-report-live me-2" href="report-live.html" aria-label="Report Live - submit an urgent case">
                             <span class="live-dot" aria-hidden="true"></span>
                             Report Live
                         </a>
@@ -322,41 +323,85 @@
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                        <label for="name">Full Name</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                        <label for="email">Email Address</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
-                                            autocomplete="off" checked>
-                                        <label class="btn btn-light" for="btnradio1">$10</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
-                                            autocomplete="off">
-                                        <label class="btn btn-light" for="btnradio2">$20</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3"
-                                            autocomplete="off">
-                                        <label class="btn btn-light" for="btnradio3">$30</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio4"
-                                            autocomplete="off">
-                                        <label class="btn btn-light" for="btnradio4">$40</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio5"
-                                            autocomplete="off">
-                                        <label class="btn btn-light" for="btnradio5">$50</label>
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                                        <label for="phone">Phone Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="currency" name="currency" required>
+                                            <option value="NGN" selected>NGN (₦)</option>
+                                            <option value="USD">USD ($)</option>
+                                            <option value="GBP">GBP (£)</option>
+                                            <option value="EUR">EUR (€)</option>
+                                        </select>
+                                        <label for="currency">Currency</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="amount" name="amount" placeholder="Amount" min="1" step="1" required>
+                                        <label for="amount">Donation Amount</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-secondary py-3 w-100" type="submit" href="#!">Donate
+                                    <div class="form-floating">
+                                        <select class="form-select" id="cause" name="cause" required>
+                                            <option value="" selected disabled>Select a cause</option>
+                                            <option value="legal-aid">Legal Aid Fund</option>
+                                            <option value="rescue">Rescue Missions</option>
+                                            <option value="victim-support">Victim Support / Emergency Response</option>
+                                            <option value="safe-city">Safe City Community Programs</option>
+                                            <option value="general">General Donation</option>
+                                        </select>
+                                        <label for="cause">Donation Cause</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="frequency" name="frequency" required>
+                                            <option value="one-time" selected>One-time</option>
+                                            <option value="monthly">Monthly</option>
+                                            <option value="quarterly">Quarterly</option>
+                                            <option value="yearly">Yearly</option>
+                                        </select>
+                                        <label for="frequency">Donation Frequency</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="location" name="location" placeholder="City / Country">
+                                        <label for="location">City / Country</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" name="message" placeholder="Message" style="height: 100px;"></textarea>
+                                        <label for="message">Message / Dedication (optional)</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-start">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="anonymous" name="anonymous">
+                                        <label class="form-check-label text-dark" for="anonymous">
+                                            Make this donation anonymous
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-secondary py-3 w-100" type="submit">Donate
                                         Now</button>
                                 </div>
                             </div>
@@ -456,8 +501,7 @@
                         <!--/*** This template is free as long as you keep the below author?s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author?s credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="fw-semi-bold" href="https://htmlcodex.com">HTML Codex</a>. Distributed by
-                        <a class="fw-semi-bold" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        Designed By <span class="fw-semi-bold">ERIBS Tech</span>
                     </div>
                 </div>
             </div>
