@@ -108,7 +108,7 @@
                         <a href="../index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About Us</a>
                         <a href="services.html" class="nav-item nav-link">Services</a>
-                        <a href="donation.html" class="nav-item nav-link active">Donations</a>
+                        <a href="donations.html" class="nav-item nav-link">Donations</a>
                         <div class="nav-item dropdown">
                             <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                             <div class="dropdown-menu bg-light m-0">
@@ -319,7 +319,7 @@
                 </div>
                 <div class="col-lg-5 donate-form bg-primary py-5 text-center wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 p-5">
-                        <form>
+                        <form id="donationCaptureForm">
                             <div class="row g-3">
                                 <div class="col-12">
                                     <div class="form-floating">
@@ -525,6 +525,43 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+    (function () {
+        var form = document.getElementById("donationCaptureForm");
+        if (!form) return;
+        var STORAGE_KEY = "scvf_donations_ledger";
+        var causeLabels = {
+            "legal-aid": "Legal Aid Fund",
+            "rescue": "Rescue Missions",
+            "victim-support": "Victim Support / Emergency Response",
+            "safe-city": "Safe City Community Programs",
+            "general": "General Donation"
+        };
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var anonymous = document.getElementById("anonymous").checked;
+            var cause = document.getElementById("cause").value;
+            var message = document.getElementById("message").value.trim();
+            var entry = {
+                id: "don-" + Date.now(),
+                name: anonymous ? "Anonymous Donor" : document.getElementById("name").value.trim(),
+                phone: document.getElementById("phone").value.trim(),
+                description: message || ("Donation toward " + (causeLabels[cause] || cause)),
+                amount: Number(document.getElementById("amount").value) || 0,
+                currency: document.getElementById("currency").value,
+                cause: cause,
+                anonymous: anonymous,
+                createdAt: new Date().toISOString()
+            };
+            var list = [];
+            try { list = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); } catch (err) { list = []; }
+            if (!Array.isArray(list)) list = [];
+            list.push(entry);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+            window.location.href = "donations.html";
+        });
+    })();
+    </script>
 </body>
 
 </html>

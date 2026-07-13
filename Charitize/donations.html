@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Rescue Stories | Behind Bars & Safe City Volunteer Foundation</title>
+    <title>Donations Ledger | Behind Bars & Safe City Volunteer Foundation</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Behind Bars Human Rights Foundation, Safe City Volunteer Foundation, human rights, prison reform, legal aid, community safety, Nigeria, Asaba, Delta State" name="keywords">
-    <meta content="Read anonymized stories from families, volunteers, and community leaders about reunification support, advocacy, and rescue missions." name="description">
-    <meta property="og:title" content="Rescue Stories | Behind Bars & Safe City Volunteer Foundation">
-    <meta property="og:description" content="Read anonymized stories from families, volunteers, and community leaders about reunification support, advocacy, and rescue missions.">
+    <meta content="donations ledger, transparency, Safe City Volunteer Foundation, Behind Bars Human Rights Foundation, donor records, Nigeria" name="keywords">
+    <meta content="View real-time donation activity with donor names, masked phone numbers, partial descriptions, bank balance, and amount spent so far." name="description">
+    <meta property="og:title" content="Donations Ledger | Behind Bars & Safe City Volunteer Foundation">
+    <meta property="og:description" content="Transparent, real-time donation records for Safe City Volunteer Foundation and Behind Bars Human Rights Foundation.">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -32,6 +32,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/donations.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,7 +48,7 @@
     <div class="container-fluid bg-secondary top-bar wow fadeIn" data-wow-delay="0.1s">
         <div class="row align-items-center h-100">
             <div class="col-lg-4 text-center text-lg-start">
-                                <a href="../index.html">
+                <a href="../index.html">
                     <img src="img/safe-city-logo.jpg" alt="Safe City Volunteer Foundation" class="m-0" style="height: 80px;">
                     <img src="img/behind_bar_logo.png" alt="Behind Bars Human Rights Foundation" class="m-0 ms-2" style="height: 80px;">
                 </a>
@@ -108,15 +109,16 @@
                         <a href="../index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About Us</a>
                         <a href="services.html" class="nav-item nav-link">Services</a>
-                        <a href="donations.html" class="nav-item nav-link">Donations</a>
+                        <a href="donations.html" class="nav-item nav-link active">Donations</a>
                         <div class="nav-item dropdown">
-                            <a href="#!" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">More</a>
+                            <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
                             <div class="dropdown-menu bg-light m-0">
                                 <a href="event.html" class="dropdown-item">Events</a>
                                 <a href="feature.html" class="dropdown-item">Our Mission</a>
                                 <a href="team.html" class="dropdown-item">Volunteer</a>
-                                <a href="testimonial.html" class="dropdown-item active">Rescue Stories</a>
+                                <a href="testimonial.html" class="dropdown-item">Rescue Stories</a>
                                 <a href="report-live.html" class="dropdown-item">Report Live</a>
+                                <a href="donation.html" class="dropdown-item">Give Now</a>
                                 <a href="404.html" class="dropdown-item">Get Help</a>
                             </div>
                         </div>
@@ -153,12 +155,11 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container text-center py-4">
-            <h1 class="display-3 animated slideInDown">Rescue Stories</h1>
+            <h1 class="display-3 animated slideInDown">Donations</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#!">More</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Rescue Stories</li>
+                    <li class="breadcrumb-item active" aria-current="page">Donations</li>
                 </ol>
             </nav>
         </div>
@@ -166,136 +167,104 @@
     <!-- Page Header End -->
 
 
-    <!-- Video Start -->
+    <!-- Live Intro Start -->
     <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <h2 class="display-6 mb-3">Live Donation Transparency</h2>
+                    <p class="fs-5 mb-0">Donor names, masked phone numbers, and partial descriptions update in real time. Sensitive details are protected while remaining publicly accountable.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <div class="donations-live-badge mb-2">
+                        <span class="pulse-dot" aria-hidden="true"></span>
+                        <strong>LIVE</strong>
+                    </div>
+                    <div class="fs-5" id="liveClock">—</div>
+                    <div class="small" id="lastUpdated">Updating…</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Live Intro End -->
+
+
+    <!-- Totals Start -->
+    <div class="container-fluid pb-4">
         <div class="container">
-            <div class="row g-0">
-                <div class="col-lg-11">
-                    <div class="h-100 py-5 d-flex align-items-center">
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h3 class="ms-5 mb-0">Together, we defend human rights and keep communities safe.
-                        </h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="donation-stat-card text-center bg-primary py-5 px-3 h-100">
+                        <i class="fa fa-vault fa-3x text-secondary mb-3"></i>
+                        <h6 class="text-dark mb-2">Total in Bank</h6>
+                        <h2 class="display-6 mb-0" id="totalInBank">₦0</h2>
                     </div>
                 </div>
-                <div class="d-none d-lg-block col-lg-1">
-                    <div class="h-100 w-100 bg-secondary d-flex align-items-center justify-content-center">
-                        <span class="text-white" style="transform: rotate(-90deg);">Scroll Down</span>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="donation-stat-card text-center bg-secondary py-5 px-3 h-100">
+                        <i class="fa fa-money-bill-transfer fa-3x text-primary mb-3"></i>
+                        <h6 class="text-white mb-2">Amount Spent So Far</h6>
+                        <h2 class="display-6 text-white mb-0" id="amountSpent">₦0</h2>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- Video End -->
-
-
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="donation-stat-card text-center bg-secondary py-5 px-3 h-100">
+                        <i class="fa fa-hand-holding-dollar fa-3x text-primary mb-3"></i>
+                        <h6 class="text-white mb-2">Total Received</h6>
+                        <h2 class="display-6 text-white mb-0" id="totalReceived">₦0</h2>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
-                            allowscriptaccess="always" allow="autoplay"></iframe>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="donation-stat-card text-center bg-primary py-5 px-3 h-100">
+                        <i class="fa fa-users fa-3x text-secondary mb-3"></i>
+                        <h6 class="text-dark mb-2">Recorded Donors</h6>
+                        <h2 class="display-6 mb-0" id="donorCount">0</h2>
                     </div>
                 </div>
             </div>
+            <p class="small text-muted mt-3 mb-0">Bank totals are shown in NGN. Foreign-currency gifts are converted using demo exchange rates for transparency display.</p>
         </div>
     </div>
-    <!-- Video Modal End -->
+    <!-- Totals End -->
 
 
-    <!-- Testimonial Start -->
+    <!-- Ledger Table Start -->
     <div class="container-fluid py-5">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-md-12 col-lg-4 col-xl-3 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="testimonial-title">
-                        <h1 class="display-6 mb-4">Stories of Hope, Justice, and Reunification</h1>
-                        <p class="fs-5 mb-0">Anonymized accounts from families, volunteers, and community leaders who have experienced our advocacy and rescue support.</p>
-                    </div>
+            <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-3 wow fadeIn" data-wow-delay="0.1s">
+                <div>
+                    <p class="section-title bg-white text-start text-primary pe-3">Ledger</p>
+                    <h1 class="display-6 mb-0">Recent Donations</h1>
                 </div>
-                <div class="col-md-12 col-lg-8 col-xl-9">
-                    <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay="0.3s">
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="Family reunification support story" loading="lazy">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="testimonial-text pb-5 pb-md-0">
-                                        <div class="mb-2">
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                            <i class="fa fa-star text-primary"></i>
-                                        </div>
-                                        <p class="fs-5">When our loved one was wrongfully detained, Behind Bars stepped in with legal aid and prison visits. Within weeks, we had answers ? and eventually, reunification. We are forever grateful.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Family Member</h5>
-                                                <span>Reunification Support</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="Volunteer community safety story" loading="lazy"> that community safety starts with showing up. Our patrols and missing persons alerts have made a real difference in our neighborhood.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Volunteer</h5>
-                                                <span>Community Safety</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="row g-5 align-items-center">
-                                <div class="col-md-6">
-                                    <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="Community leader advocacy story" loading="lazy"> advocate for detainees and mobilize emergency response when families need it most. Their work saves lives.</p>
-                                        <div class="d-flex align-items-center">
-                                            <div class="btn-lg-square bg-light text-secondary flex-shrink-0">
-                                                <i class="fa fa-quote-right fa-2x"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h5 class="mb-0">Community Leader</h5>
-                                                <span>Human Rights Advocacy</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <a class="btn btn-primary py-3 px-4" href="donation.html">Make a Donation</a>
+            </div>
+
+            <div class="donations-table-wrap bg-white p-3 p-md-4 wow fadeIn" data-wow-delay="0.2s">
+                <div id="donationsEmpty" class="text-center py-5 d-none">
+                    <p class="mb-3">No donations recorded yet.</p>
+                    <a class="btn btn-secondary py-2 px-4" href="donation.html">Be the First Donor</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table donations-table align-middle mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">SN</th>
+                                <th scope="col">Date &amp; Time</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="donationsTableBody">
+                            <!-- Filled in real time by donations.js -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- Ledger Table End -->
 
 
     <!-- Banner Start -->
@@ -304,11 +273,11 @@
             <div class="banner-inner bg-light p-5 wow fadeIn" data-wow-delay="0.1s">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 py-5 text-center">
-                        <h1 class="display-6 wow fadeIn" data-wow-delay="0.3s">Every Story Reminds Us Why This Work Matters</h1>
-                        <p class="fs-5 mb-4 wow fadeIn" data-wow-delay="0.5s">Whether you need reunification support, want to volunteer, or wish to advocate for human rights in your community, we welcome you.</p>
-                        <div class="d-flex justify-content-center wow fadeIn" data-wow-delay="0.7s">
-                            <a class="btn btn-primary py-3 px-4 me-3" href="contact.html">Request Assistance</a>
-                            <a class="btn btn-secondary py-3 px-4" href="team.html">Join Us Now</a>
+                        <h1 class="display-6 wow fadeIn" data-wow-delay="0.3s">Your Gift Becomes Visible Progress</h1>
+                        <p class="fs-5 mb-4 wow fadeIn" data-wow-delay="0.5s">Every donation supports legal aid, rescue missions, and community safety — and appears on this ledger with privacy protections for donors.</p>
+                        <div class="d-flex justify-content-center flex-wrap gap-2 wow fadeIn" data-wow-delay="0.7s">
+                            <a class="btn btn-primary py-3 px-4 me-lg-3" href="donation.html">Donate Now</a>
+                            <a class="btn btn-secondary py-3 px-4" href="report-live.html">Report Live</a>
                         </div>
                     </div>
                 </div>
@@ -323,7 +292,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
-                                        <h1 class="display-6 mb-4">Stay Informed on Our Work</h1>
+                    <h1 class="display-6 mb-4">Stay Informed on Our Work</h1>
                     <div class="position-relative w-100 mb-2">
                         <input class="form-control border-0 w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email"
                             style="height: 60px;">
@@ -345,7 +314,7 @@
             <div class="row g-5 py-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Our Office</h4>
-                                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Asaba, Delta State, Nigeria</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Asaba, Delta State, Nigeria</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+234 800 723 3248</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@safecitybehindbars.org</p>
                     <div class="d-flex pt-3">
@@ -359,8 +328,8 @@
                     <h4 class="text-light mb-4">Quick Links</h4>
                     <a class="btn btn-link" href="about.html">About Us</a>
                     <a class="btn btn-link" href="contact.html">Contact</a>
-                    <a class="btn btn-link" href="feature.html">Programs</a>
-                    <a class="btn btn-link" href="donation.html">Donate</a>
+                    <a class="btn btn-link" href="donations.html">Donations</a>
+                    <a class="btn btn-link" href="donation.html">Give Now</a>
                     <a class="btn btn-link" href="team.html">Volunteer</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -402,9 +371,6 @@
                         &copy; <a class="fw-semi-bold" href="../index.html">Behind Bars Human Rights Foundation &amp; Safe City Volunteer Foundation</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the below author?s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author?s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
                         Designed By <span class="fw-semi-bold">ERIBS Tech</span>
                     </div>
                 </div>
@@ -429,6 +395,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/donations.js"></script>
 </body>
 
 </html>

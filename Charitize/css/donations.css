@@ -1,0 +1,50 @@
+/* Page-only styles for donations ledger — does not change global theme */
+.donations-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.donations-live-badge .pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #dc3545;
+    animation: donations-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes donations-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.45; transform: scale(0.85); }
+}
+
+.donations-table-wrap {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .05);
+    overflow-x: auto;
+}
+
+.donations-table thead th {
+    white-space: nowrap;
+    background: var(--bs-secondary);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+}
+
+.donations-table tbody tr:hover {
+    background: rgba(255, 193, 7, 0.08);
+}
+
+.donations-table td {
+    vertical-align: middle;
+}
+
+.donation-stat-card {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .donations-live-badge .pulse-dot {
+        animation: none;
+    }
+}
